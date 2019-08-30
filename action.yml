@@ -2,15 +2,11 @@ name: 'notifychanges'
 description: 'Notifies other repos about changes'
 author: 'Nodes'
 inputs: 
-  dev1:
-    description: '1st developer'
-    default: 'Siemen'
-  dev2:
-    description: '2nd developer'
-    default: 'Jesper'
+  trigger:
+    description: 'Github repository that triggered this action'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.dev1 }}
-    - ${{ inputs.dev2 }}
+    - ${{ inputs.trigger }}
