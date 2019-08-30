@@ -2,11 +2,15 @@ name: 'notifychanges'
 description: 'Notifies other repos about changes'
 author: 'Nodes'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'Rasmus'
+  dev1:
+    description: '1st developer'
+    default: 'Siemen'
+  dev2:
+    description: '2nd developer'
+    default: 'Jesper'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.dev1 }}
+    - ${{ inputs.dev2 }}
