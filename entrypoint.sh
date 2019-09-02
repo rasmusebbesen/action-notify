@@ -15,7 +15,7 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -d '{
 	"build_parameters": {
-		"TRIGGERED_BY": "$1",
+		"TRIGGERED_BY": $1,
 		"CIRCLE_JOB": "build"
 	}
 }' -v
