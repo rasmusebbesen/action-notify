@@ -5,8 +5,12 @@ inputs:
   trigger:
     description: 'Github repository that triggered this action'
     default: ''
+  circle_token:
+    description: 'Token for Circle CI API'
+    defaut: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.trigger }}
+    - ${{ inputs.circle_token }}
