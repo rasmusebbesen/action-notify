@@ -16,4 +16,4 @@ curl -X POST \
 		"TRIGGERED_BY": "$1",
 		"CIRCLE_JOB": "build"
 	}
-}'
+}' -v
