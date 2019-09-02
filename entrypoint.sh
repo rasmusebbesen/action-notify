@@ -2,8 +2,10 @@
 
 echo "Triggered by $1"
 
+url = "https://circleci.com/api/v1.1/project/github/nodes-projects/documentation/tree/develop?circle-token=$2"
+
 curl -X POST \
-  'https://circleci.com/api/v1.1/project/github/nodes-projects/documentation/tree/develop?circle-token=$2' \
+  url \
   -H 'Accept: application/json' \
   -H 'Accept-Encoding: gzip, deflate' \
   -H 'Cache-Control: no-cache' \
