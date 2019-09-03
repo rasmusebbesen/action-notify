@@ -3,21 +3,14 @@
 echo "Triggered by $1"
 
 url="https://circleci.com/api/v1.1/project/github/nodes-projects/documentation/tree/develop?circle-token=$2"
-trigger=$1
+trigger="rasmusebbesen/readme2"
 
 generate_post_data()
 {
-  cat <<EOF
-{
-	"build_parameters": {
-		"TRIGGERED_BY": "$trigger",
-		"CIRCLE_JOB": "build"
-	}
-}
-EOF
+  cat {"build_parameters": {"TRIGGERED_BY": "$trigger","CIRCLE_JOB": "build"}}
 }
 
-echo generate_post_data
+echo $(generate_post_data)
 
 curl -X POST \
   $url \
@@ -28,4 +21,4 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Host: circleci.com' \
   -H 'cache-control: no-cache' \
-  -d '$(generate_post_data)' -v
+  -d "$(generate_post_data)" -vv
