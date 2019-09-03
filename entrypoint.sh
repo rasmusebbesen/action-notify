@@ -17,6 +17,8 @@ generate_post_data()
 EOF
 }
 
+echo generate_post_data
+
 curl -X POST \
   $url \
   -H 'Accept: application/json' \
