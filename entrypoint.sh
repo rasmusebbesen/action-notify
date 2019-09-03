@@ -7,7 +7,7 @@ trigger="rasmusebbesen/readme2"
 
 generate_post_data()
 {
-  cat {"build_parameters": {"TRIGGERED_BY": "$trigger","CIRCLE_JOB": "build"}}
+  return "{\"build_parameters\": {\"TRIGGERED_BY\": \"$trigger\",\"CIRCLE_JOB\": \"build\"}}"
 }
 
 echo $(generate_post_data)
