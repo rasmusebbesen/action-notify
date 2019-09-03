@@ -26,4 +26,4 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Host: circleci.com' \
   -H 'cache-control: no-cache' \
-  -data "$(generate_post_data)" -v
+  -data '$(generate_post_data)' -v
